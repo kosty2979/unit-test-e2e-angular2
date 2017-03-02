@@ -1,0 +1,13 @@
+<h1 class="page-title">Dashboard </h1>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="row">
+      <button id="mission-clear-button" class="btn mb-xs btn-outline-primary" role="button" style="text-transform: uppercase; margin-bottom:12px; font-size:13px;" (click)="updateMissions()" (missionEmitter)="emitMission($event)">Update</button>
+    </div>
+
+    <incoming-missions [missions]="missions"></incoming-missions>
+    <live-missions (completedMission)="completeMission($event)"></live-missions>
+    <completed-missions [completedMission]="completedMission"></completed-missions>
+  </div>
+</div>

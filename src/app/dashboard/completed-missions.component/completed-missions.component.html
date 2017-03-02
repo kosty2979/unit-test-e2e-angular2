@@ -1,0 +1,32 @@
+<section class="widget data-list" widget>
+  <header>
+    <h5>
+        <span class="fw-semi-bold">Completed Missions</span>
+        <span class="right">{{missions?.length}}</span>
+    </h5>
+    <div class="widget-controls">
+    </div>
+  </header>
+  <div class="widget-body">
+    <table class="table">
+      <thead>
+          <tr>
+            <th>ID</th>
+            <th>Vehicle</th>
+            <th>Model</th>
+            <th>Package</th>
+            <th></th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let m of missions; let i = index">
+          <td id="{{ 'selenium-incoming-mission' + i }}">{{ m?.id | slice:0:3 }}</td>
+          <td id="{{ 'selenium-incoming-RPAS-' + i }}">{{m?.vehicle}}</td>
+          <td id="{{ 'selenium-incoming-package-' + i }}"><span *ngIf="m?.package">{{m?.package}}</span><span *ngIf="!m?.package">N/A</span></td>
+          <td id="{{ 'selenium-incoming-distance-' + i }}">{{m?.route}}</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</section>
